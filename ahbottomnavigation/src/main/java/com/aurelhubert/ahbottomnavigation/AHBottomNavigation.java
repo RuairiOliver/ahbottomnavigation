@@ -551,10 +551,14 @@ public class AHBottomNavigation extends FrameLayout {
 				}
 			}
 
-			Log.d("Test");
+			int iconColor = currentItem == i ? itemActiveColor : itemInactiveColor;
+
+			if(i == 2){
+				iconColor = Color.BLUE;
+			}
 
 			icon.setImageDrawable(AHHelper.getTintDrawable(items.get(i).getDrawable(context),
-					item.getTitle(context) == "Menu" ? Color.BLUE : itemInactiveColor, forceTint));
+					iconColor, forceTint));
 			title.setTextColor(currentItem == i ? itemActiveColor : itemInactiveColor);
 			title.setAlpha(currentItem == i ? 1 : 0);
 			view.setOnClickListener(new OnClickListener() {
