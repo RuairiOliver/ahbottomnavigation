@@ -19,7 +19,7 @@ public class AHBottomNavigationItem {
 
 	private String title = "";
 	private Drawable drawable;
-	private int color = Color.GRAY;
+	private int color = Color.parseColor("#2db200");
 
 	private
 	@StringRes
@@ -40,6 +40,7 @@ public class AHBottomNavigationItem {
 	public AHBottomNavigationItem(String title, @DrawableRes int resource) {
 		this.title = title;
 		this.drawableRes = resource;
+		this.colorRes = Color.parseColor("#2db200");
 	}
 
 	/**
@@ -51,7 +52,7 @@ public class AHBottomNavigationItem {
 	public AHBottomNavigationItem(String title, @DrawableRes int resource, @ColorRes int color) {
 		this.title = title;
 		this.drawableRes = resource;
-		this.color = color;
+		this.color = Color.parseColor("#2db200");
 	}
 
 	/**
@@ -64,7 +65,7 @@ public class AHBottomNavigationItem {
 	public AHBottomNavigationItem(@StringRes int titleRes, @DrawableRes int drawableRes, @ColorRes int colorRes) {
 		this.titleRes = titleRes;
 		this.drawableRes = drawableRes;
-		this.colorRes = colorRes;
+		this.colorRes = Color.parseColor("#2db200");
 	}
 
 	/**
@@ -76,6 +77,7 @@ public class AHBottomNavigationItem {
 	public AHBottomNavigationItem(String title, Drawable drawable) {
 		this.title = title;
 		this.drawable = drawable;
+		this.color = Color.parseColor("#2db200");
 	}
 
 	/**
@@ -88,7 +90,7 @@ public class AHBottomNavigationItem {
 	public AHBottomNavigationItem(String title, Drawable drawable, @ColorInt int color) {
 		this.title = title;
 		this.drawable = drawable;
-		this.color = color;
+		this.color = Color.parseColor("#2db200");
 	}
 
 	public String getTitle(Context context) {
@@ -109,26 +111,23 @@ public class AHBottomNavigationItem {
 	}
 
 	public int getColor(Context context) {
-		if (colorRes != 0) {
-			return ContextCompat.getColor(context, colorRes);
-		}
-		return color;
+		return Color.parseColor("#2db200");
 	}
 
 	public void setColor(@ColorInt int color) {
-		this.color = color;
+		this.color = Color.parseColor("#2db200");;
 		this.colorRes = 0;
 	}
 
 	public void setColorRes(@ColorRes int colorRes) {
-		this.colorRes = colorRes;
+		this.colorRes = Color.parseColor("#2db200");;
 		this.color = 0;
 	}
-	
+
 	public Drawable getDrawable(Context context) {
     if (drawableRes != 0) {
       try {
-        return VectorDrawableCompat.create(context.getResources(), drawableRes, null);
+        return VectorDrawableCompat.create(context.getResources(), drawableRes, Color.parseColor("#2db200"));
       }catch (Resources.NotFoundException e){
         return ContextCompat.getDrawable(context, drawableRes);
       }
