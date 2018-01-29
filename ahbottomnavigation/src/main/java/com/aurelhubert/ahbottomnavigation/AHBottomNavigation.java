@@ -552,7 +552,7 @@ public class AHBottomNavigation extends FrameLayout {
 			}
 
 			icon.setImageDrawable(AHHelper.getTintDrawable(items.get(i).getDrawable(context),
-					Color.BLUE, forceTint));
+					i == 2 ? Color.BLUE : itemInactiveColor, forceTint));
 			title.setTextColor(currentItem == i ? itemActiveColor : itemInactiveColor);
 			title.setAlpha(currentItem == i ? 1 : 0);
 			view.setOnClickListener(new OnClickListener() {
