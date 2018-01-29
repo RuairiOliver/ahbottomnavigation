@@ -554,7 +554,7 @@ public class AHBottomNavigation extends FrameLayout {
 			int iconColor = currentItem == i ? itemActiveColor : itemInactiveColor;
 
 			if(i == 2){
-				iconColor = Color.BLUE;
+				iconColor = Color.parseColor("#0874BC");
 			}
 
 			icon.setImageDrawable(AHHelper.getTintDrawable(items.get(i).getDrawable(context),
