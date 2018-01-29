@@ -19,7 +19,7 @@ public class AHBottomNavigationItem {
 
 	private String title = "";
 	private Drawable drawable;
-	private int color = Color.GRAY;
+	private int color = Color.GREEN;
 
 	private
 	@StringRes
@@ -124,7 +124,7 @@ public class AHBottomNavigationItem {
 		this.colorRes = colorRes;
 		this.color = 0;
 	}
-	
+
 	public Drawable getDrawable(Context context) {
     if (drawableRes != 0) {
       try {
