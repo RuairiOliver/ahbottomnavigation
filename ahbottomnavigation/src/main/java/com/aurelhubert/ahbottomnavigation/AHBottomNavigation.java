@@ -763,9 +763,10 @@ public class AHBottomNavigation extends FrameLayout {
 				}
 
 				AHHelper.updateAlpha(title, 0, 1);
-				AHHelper.updateDrawableColor(context, items.get(itemIndex).getDrawable(context), icon,
-						itemInactiveColor, itemActiveColor, forceTint);
-
+				if(i != 2){
+					AHHelper.updateDrawableColor(context, items.get(itemIndex).getDrawable(context), icon,
+							itemInactiveColor, itemActiveColor, forceTint);
+				}
 				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && colored) {
 					int finalRadius = Math.max(getWidth(), getHeight());
 					int cx = (int) views.get(itemIndex).getX() + views.get(itemIndex).getWidth() / 2;
@@ -830,8 +831,10 @@ public class AHBottomNavigation extends FrameLayout {
 				}
 
 				AHHelper.updateAlpha(title, 1, 0);
+				if(i != 2){
 				AHHelper.updateDrawableColor(context, items.get(currentItem).getDrawable(context), icon,
 						itemActiveColor, itemInactiveColor, forceTint);
+				}
 			}
 		}
 
