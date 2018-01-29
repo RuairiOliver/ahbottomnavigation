@@ -434,7 +434,7 @@ public class AHBottomNavigation extends FrameLayout {
 			}
 
 			icon.setImageDrawable(AHHelper.getTintDrawable(items.get(i).getDrawable(context),
-					current ? itemActiveColor : itemInactiveColor, forceTint));
+					current ? itemActiveColor : itemActiveColor, forceTint));
 			title.setTextColor(current ? itemActiveColor : itemInactiveColor);
 			title.setTextSize(TypedValue.COMPLEX_UNIT_PX, current ? activeSize : inactiveSize);
 			view.setOnClickListener(new OnClickListener() {
@@ -543,7 +543,7 @@ public class AHBottomNavigation extends FrameLayout {
 					setBackgroundColor(item.getColor(context));
 					currentColor = item.getColor(context);
 				}
-			} else if(i != 2){
+			} else {
 				if (defaultBackgroundResource != 0) {
 					setBackgroundResource(defaultBackgroundResource);
 				} else {
@@ -686,7 +686,7 @@ public class AHBottomNavigation extends FrameLayout {
 				final ImageView icon = (ImageView) view.findViewById(R.id.bottom_navigation_item_icon);
 				final TextView notification = (TextView) view.findViewById(R.id.bottom_navigation_notification);
 
-				icon.setSelected(true);
+				icon.setSelected(false);
 				AHHelper.updateTopMargin(icon, activeMarginTop, inactiveMarginTop);
 				AHHelper.updateLeftMargin(notification, notificationActiveMarginLeft, notificationInactiveMarginLeft);
 				AHHelper.updateTextColor(title, itemActiveColor, itemInactiveColor);
