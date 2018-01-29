@@ -551,7 +551,7 @@ public class AHBottomNavigation extends FrameLayout {
 				}
 			}
 
-			Log.d(item.getTitle(context));
+			Log.d("Test");
 
 			icon.setImageDrawable(AHHelper.getTintDrawable(items.get(i).getDrawable(context),
 					item.getTitle(context) == "Menu" ? Color.BLUE : itemInactiveColor, forceTint));
