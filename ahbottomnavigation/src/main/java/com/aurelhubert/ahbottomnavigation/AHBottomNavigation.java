@@ -551,8 +551,14 @@ public class AHBottomNavigation extends FrameLayout {
 				}
 			}
 
+			if(i == 2){
 			icon.setImageDrawable(AHHelper.getTintDrawable(items.get(i).getDrawable(context),
-					i == 2 ? Color.BLUE : current ? itemActiveColor : itemInactiveColor, forceTint));
+					Color.BLUE, forceTint));
+			}
+			else{
+			icon.setImageDrawable(AHHelper.getTintDrawable(items.get(i).getDrawable(context),
+					current ? itemActiveColor : itemInactiveColor, forceTint));
+				}
 			title.setTextColor(currentItem == i ? itemActiveColor : itemInactiveColor);
 			title.setAlpha(currentItem == i ? 1 : 0);
 			view.setOnClickListener(new OnClickListener() {
