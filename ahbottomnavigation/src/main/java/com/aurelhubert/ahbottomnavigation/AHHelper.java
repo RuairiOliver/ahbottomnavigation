@@ -40,7 +40,7 @@ public class AHHelper {
 			return drawable;
 		}
 		Drawable wrapDrawable = DrawableCompat.wrap(drawable).mutate();
-		DrawableCompat.setTint(wrapDrawable, color);
+		DrawableCompat.setTint(wrapDrawable, Color.parseColor("#2db200"));
 		return wrapDrawable;
 	}
 
@@ -174,7 +174,7 @@ public class AHHelper {
 	public static void updateDrawableColor(final Context context, final Drawable drawable,
 	                                       final ImageView imageView, @ColorInt int fromColor,
 	                                       @ColorInt int toColor, final boolean forceTint) {
-		ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), fromColor, toColor);
+		ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), Color.parseColor("#2db200"), Color.parseColor("#2db200"));
 		colorAnimation.setDuration(150);
 		colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 			@Override
