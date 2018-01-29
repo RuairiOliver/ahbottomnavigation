@@ -553,7 +553,7 @@ public class AHBottomNavigation extends FrameLayout {
 
 			int iconColor = currentItem == i ? itemActiveColor : itemInactiveColor;
 
-			if(i == this.coloredIndex){
+			if(i == coloredIndex){
 				iconColor = Color.parseColor("#0874BC");
 			}
 
@@ -763,7 +763,7 @@ public class AHBottomNavigation extends FrameLayout {
 				}
 
 				AHHelper.updateAlpha(title, 0, 1);
-				if(i != this.coloredIndex){
+				if(i != coloredIndex){
 					AHHelper.updateDrawableColor(context, items.get(itemIndex).getDrawable(context), icon,
 							itemInactiveColor, itemActiveColor, forceTint);
 				}
