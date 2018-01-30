@@ -462,9 +462,9 @@ public class AHBottomNavigation extends FrameLayout {
 
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-		float height = resources.getDimension("200dp");
-		float minWidth = resources.getDimension("90dp");
-		float maxWidth = resources.getDimension("90dp");
+		float height = resources.getDimension(R.dimen.bottom_navigation_height);
+		float minWidth = resources.getDimension(R.dimen.bottom_navigation_small_inactive_min_width);
+		float maxWidth = resources.getDimension(R.dimen.bottom_navigation_small_inactive_max_width);
 
 		int layoutWidth = getWidth();
 		if (layoutWidth == 0 || items.size() == 0) {
@@ -479,7 +479,7 @@ public class AHBottomNavigation extends FrameLayout {
 			itemWidth = maxWidth;
 		}
 
-		int activeMarginTop = (int) resources.getDimension("0dp");
+		int activeMarginTop = (int) resources.getDimension(R.dimen.bottom_navigation_small_margin_top_active);
 		float difference = resources.getDimension(R.dimen.bottom_navigation_small_selected_width_difference);
 
 		selectedItemWidth = itemWidth + items.size() * difference;
@@ -517,25 +517,8 @@ public class AHBottomNavigation extends FrameLayout {
 				icon.setSelected(true);
 				// Update margins (icon & notification)
 
-				if (titleState != TitleState.ALWAYS_HIDE) {
-					if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
-						ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) icon.getLayoutParams();
-						p.setMargins(p.leftMargin, activeMarginTop, p.rightMargin, p.bottomMargin);
-
-						ViewGroup.MarginLayoutParams paramsNotification = (ViewGroup.MarginLayoutParams)
-								notification.getLayoutParams();
-						paramsNotification.setMargins(notificationActiveMarginLeft, notificationActiveMarginTop,
-								paramsNotification.rightMargin, paramsNotification.bottomMargin);
-
-						view.requestLayout();
-					}
-				}
 			} else {
 				icon.setSelected(false);
-				ViewGroup.MarginLayoutParams paramsNotification = (ViewGroup.MarginLayoutParams)
-						notification.getLayoutParams();
-				paramsNotification.setMargins(notificationInactiveMarginLeft, notificationInactiveMarginTop,
-						paramsNotification.rightMargin, paramsNotification.bottomMargin);
 			}
 
 			if (colored) {
