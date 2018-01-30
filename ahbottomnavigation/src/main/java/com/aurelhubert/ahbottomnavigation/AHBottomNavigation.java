@@ -553,7 +553,8 @@ public class AHBottomNavigation extends FrameLayout {
 
 			int iconColor = currentItem == i ? itemActiveColor : itemInactiveColor;
 
-			if(i == coloredIndex){
+			//if(i == 2){
+			if(item.getTitle(context).equals("TabMenu")){
 				iconColor = Color.parseColor("#0874BC");
 			}
 
@@ -763,7 +764,7 @@ public class AHBottomNavigation extends FrameLayout {
 				}
 
 				AHHelper.updateAlpha(title, 0, 1);
-				if(i != coloredIndex){
+				if(i != 2){
 					AHHelper.updateDrawableColor(context, items.get(itemIndex).getDrawable(context), icon,
 							itemInactiveColor, itemActiveColor, forceTint);
 				}
@@ -1311,14 +1312,6 @@ public class AHBottomNavigation extends FrameLayout {
 		this.forceTint = forceTint;
 		createItems();
 	}
-
-
-		/**
-		 * @param coloredIndex Integer
-		 */
-		public void setColoredIconIndex(int coloredIndex) {
-			this.coloredIndex = coloredIndex;
-		}
 
 	/**
 	 * Return the title state for display
