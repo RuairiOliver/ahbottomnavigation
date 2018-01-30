@@ -554,7 +554,7 @@ public class AHBottomNavigation extends FrameLayout {
 			int iconColor = currentItem == i ? itemActiveColor : itemInactiveColor;
 
 			//if(i == 2){
-			if(item.getTitle(context).equals("TabMenu")){
+			if(String.valueOf(item.getTitle(context)).equals("TabMenu")){
 				iconColor = Color.parseColor("#0874BC");
 			}
 
