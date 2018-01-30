@@ -104,10 +104,9 @@ public class AHBottomNavigation extends FrameLayout {
 	private @ColorInt int coloredTitleColorActive;
 	private @ColorInt int coloredTitleColorInactive;
 	private float titleActiveTextSize, titleInactiveTextSize;
-	private int bottomNavigationHeight, navigationBarHeight = 0;
+	private int bottomNavigationHeight, navigationBarHeight = 0, menuTabIndex;
 	private float selectedItemWidth, notSelectedItemWidth;
 	private boolean forceTint = false;
-	private int menuTabIndex;
 	private TitleState titleState = TitleState.SHOW_WHEN_ACTIVE;
 
 	// Notifications
@@ -1314,7 +1313,7 @@ public class AHBottomNavigation extends FrameLayout {
 	}
 
 	/**
-	 * @param forceTint Boolean
+	 * @param menuTabIndex Integer
 	 */
 	public void setMenuTabIndex(int menuTabIndex) {
 		this.menuTabIndex = menuTabIndex;
