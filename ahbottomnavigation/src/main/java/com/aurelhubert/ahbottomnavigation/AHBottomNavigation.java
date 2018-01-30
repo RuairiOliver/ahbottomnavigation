@@ -462,9 +462,9 @@ public class AHBottomNavigation extends FrameLayout {
 
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-		float height = resources.getDimension(R.dimen.bottom_navigation_height);
-		float minWidth = resources.getDimension(R.dimen.bottom_navigation_small_inactive_min_width);
-		float maxWidth = resources.getDimension(R.dimen.bottom_navigation_small_inactive_max_width);
+		float height = resources.getDimension("200dp");
+		float minWidth = resources.getDimension("90dp");
+		float maxWidth = resources.getDimension("90dp");
 
 		int layoutWidth = getWidth();
 		if (layoutWidth == 0 || items.size() == 0) {
@@ -479,7 +479,7 @@ public class AHBottomNavigation extends FrameLayout {
 			itemWidth = maxWidth;
 		}
 
-		int activeMarginTop = (int) resources.getDimension(R.dimen.bottom_navigation_small_margin_top_active);
+		int activeMarginTop = (int) resources.getDimension("0dp");
 		float difference = resources.getDimension(R.dimen.bottom_navigation_small_selected_width_difference);
 
 		selectedItemWidth = itemWidth + items.size() * difference;
