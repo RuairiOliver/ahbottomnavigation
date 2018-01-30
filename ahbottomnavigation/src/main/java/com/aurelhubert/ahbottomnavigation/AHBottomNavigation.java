@@ -576,6 +576,11 @@ public class AHBottomNavigation extends FrameLayout {
 				width = (int) (itemWidth * 1.16);
 			}
 
+			if(i == menuTabIndex){
+				width = width * 2;
+				height = height * 2;
+			}
+
 			LayoutParams params = new LayoutParams(width, (int) height);
 			linearLayout.addView(view, params);
 			views.add(view);
