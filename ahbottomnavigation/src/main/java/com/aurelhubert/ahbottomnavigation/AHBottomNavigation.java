@@ -517,8 +517,25 @@ public class AHBottomNavigation extends FrameLayout {
 				icon.setSelected(true);
 				// Update margins (icon & notification)
 
+				//if (titleState != TitleState.ALWAYS_HIDE) {
+					if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+						ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) icon.getLayoutParams();
+						p.setMargins(p.leftMargin, activeMarginTop, p.rightMargin, p.bottomMargin);
+
+						ViewGroup.MarginLayoutParams paramsNotification = (ViewGroup.MarginLayoutParams)
+								notification.getLayoutParams();
+						paramsNotification.setMargins(notificationActiveMarginLeft, notificationActiveMarginTop,
+								paramsNotification.rightMargin, paramsNotification.bottomMargin);
+
+						view.requestLayout();
+					}
+				//}
 			} else {
 				icon.setSelected(false);
+				ViewGroup.MarginLayoutParams paramsNotification = (ViewGroup.MarginLayoutParams)
+						notification.getLayoutParams();
+				paramsNotification.setMargins(notificationInactiveMarginLeft, notificationInactiveMarginTop,
+						paramsNotification.rightMargin, paramsNotification.bottomMargin);
 			}
 
 			if (colored) {
