@@ -107,6 +107,7 @@ public class AHBottomNavigation extends FrameLayout {
 	private int bottomNavigationHeight, navigationBarHeight = 0;
 	private float selectedItemWidth, notSelectedItemWidth;
 	private boolean forceTint = false;
+	private int menuTabIndex;
 	private TitleState titleState = TitleState.SHOW_WHEN_ACTIVE;
 
 	// Notifications
@@ -553,8 +554,7 @@ public class AHBottomNavigation extends FrameLayout {
 
 			int iconColor = currentItem == i ? itemActiveColor : itemInactiveColor;
 
-			//if(i == 2){
-			if(String.valueOf(item.getTitle(context)).equals("TabMenu")){
+			if(i == menuTabIndex){
 				iconColor = Color.parseColor("#0874BC");
 			}
 
@@ -764,7 +764,7 @@ public class AHBottomNavigation extends FrameLayout {
 				}
 
 				AHHelper.updateAlpha(title, 0, 1);
-				if(i != 2){
+				if(i != menuTabIndex){
 					AHHelper.updateDrawableColor(context, items.get(itemIndex).getDrawable(context), icon,
 							itemInactiveColor, itemActiveColor, forceTint);
 				}
@@ -832,7 +832,7 @@ public class AHBottomNavigation extends FrameLayout {
 				}
 
 				AHHelper.updateAlpha(title, 1, 0);
-				if(i != 2){
+				if(i != menuTabIndex){
 				AHHelper.updateDrawableColor(context, items.get(currentItem).getDrawable(context), icon,
 						itemActiveColor, itemInactiveColor, forceTint);
 				}
@@ -1311,6 +1311,13 @@ public class AHBottomNavigation extends FrameLayout {
 	public void setForceTint(boolean forceTint) {
 		this.forceTint = forceTint;
 		createItems();
+	}
+
+	/**
+	 * @param forceTint Boolean
+	 */
+	public void setMenuTabIndex(int menuTabIndex) {
+		this.menuTabIndex = menuTabIndex;
 	}
 
 	/**
